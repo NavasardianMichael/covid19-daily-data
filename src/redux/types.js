@@ -1,0 +1,1 @@
+export const SET_ALL_DATA = 'DATA/SET_ALL_DATA';
