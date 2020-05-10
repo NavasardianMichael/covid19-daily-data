@@ -23,16 +23,16 @@ export function showData(showData) {
 export function fetchAllData() {
 	return function(dispatch) {
 			var allData = [];
-			fetch("https://covid-19-data.p.rapidapi.com/report/country/all?date-format=YYYY-MM-DD&format=json&date=2020-04-01", {
-			  "method": "GET",
-			  "headers": {
-			    "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
-			    "x-rapidapi-key": "7827889b5bmsh5d1ac9ac9c7b80bp1401dejsnfcde920261bb"
-			  }
+			fetch("https://covid-193.p.rapidapi.com/statistics", {
+				"method": "GET",
+				"headers": {
+					"x-rapidapi-host": "covid-193.p.rapidapi.com",
+					"x-rapidapi-key": "7827889b5bmsh5d1ac9ac9c7b80bp1401dejsnfcde920261bb"
+				}
 			})
 			.then(response => response.json())
 			.then(data => {
-				allData = data.slice(0, 10);
+				allData = data.response.slice(0, 40);
 				dispatch(setAllData(allData));
 			})
 			.then(() => dispatch(showAllData()))

@@ -11,7 +11,7 @@ function Data(props) {
 		dispatch(fetchAllData());
 	};
 
-	const data = props.allData.map(item => <DataItem country={item} />)
+	const data = props.allData.map(item => <DataItem country={item} key={item.country}/>)
 	
 	return (
 		<div className="data">
