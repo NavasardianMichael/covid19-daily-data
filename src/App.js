@@ -5,7 +5,8 @@ import SearchArea from './components/SearchArea';
 function App() {
   return (
     <div className="container">
-      <h1 className="text-center my-4">COVID19 DAILY INFO</h1>
+      <h1 className="text-center mt-4">COVID19 DAILY INFO</h1>
+      <p className="mt-1 mb-4 text-secondary text-center">The information is updated every 15 minutes</p>
       <SearchArea />
       <Data />
     </div>

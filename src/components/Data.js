@@ -15,7 +15,7 @@ function Data(props) {
 	
 	return (
 		<div className="data">
-			<button type="button" className="btn btn-danger" onClick={loadAllData}>Load All Data</button>
+			<button type="button" className="btn btn-danger" onClick={loadAllData}>Load most affected countries</button>
             <div className="cards-section mt-4">
             	<div className="row m-0">
             		{data}

@@ -13,10 +13,10 @@ export function showAllData(allData) {
 	}
 };
 
-export function showData(showData) {
+export function showData(showDataItem) {
 	return {
 		type: ADD_SHOW_DATA,
-		showData
+		showDataItem
 	}
 };
 

@@ -12,7 +12,9 @@ export function dataReducer(state = initialState, action) {
 		case SHOW_ALL_DATA:
 			return {...state, showData: state.allData}
 		case ADD_SHOW_DATA:
-			return {...state, showData: [...state.showData, action.showData]}			
+			if(!state.showData.includes(action.showDataItem)) {
+				return {...state, showData: [...state.showData, action.showDataItem]}			
+			}
 		default: return state
 	}
 };

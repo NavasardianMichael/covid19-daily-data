@@ -44,10 +44,7 @@ function SearchArea() {
 
 	return (
 		<div className="search-area">
-			<div className="input-group mb-3">
-			  <input type="text" className="form-control" placeholder="Search for countries manually" onChange={typingHandler} value={currentSearchText}/>
-
-			</div>
+			<input type="text" className="form-control" placeholder="Search for countries manually" onChange={typingHandler} value={currentSearchText}/>
 			<div className="row mx-0 my-3 found-countries-block">
 				{foundCountriesItems}
 			</div>
