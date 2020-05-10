@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useStore, connect } from 'react-redux';
 
-import { fetchAllData } from '../redux/actions';
+import { fetchAllData, showAllData } from '../redux/actions';
 import DataItem from './DataItem';
 
 function Data(props) {
@@ -11,7 +11,7 @@ function Data(props) {
 		dispatch(fetchAllData());
 	};
 
-	const data = props.allData.map(item => <DataItem country={item} key={item.latitude} />)
+	const data = props.allData.map(item => <DataItem country={item} />)
 	
 	return (
 		<div className="data">
@@ -27,7 +27,7 @@ function Data(props) {
 
 const mapStateToProps = state => {
 	return {
-		allData: state.data.allData
+		allData: state.data.showData
 	}
 }
 

@@ -1,1 +1,3 @@
 export const SET_ALL_DATA = 'DATA/SET_ALL_DATA';
+export const SHOW_ALL_DATA = 'DATA/SHOW_ALL_DATA';
+export const ADD_SHOW_DATA = 'DATA/ADD_SHOW_DATA';

@@ -1,9 +1,22 @@
-import { SET_ALL_DATA } from './types';
+import { SET_ALL_DATA, SHOW_ALL_DATA, ADD_SHOW_DATA } from './types';
 
 export function setAllData(allData) {
 	return {
 		type: SET_ALL_DATA,
 		allData
+	}
+};
+
+export function showAllData(allData) {
+	return {
+		type: SHOW_ALL_DATA
+	}
+};
+
+export function showData(showData) {
+	return {
+		type: ADD_SHOW_DATA,
+		showData
 	}
 };
 
@@ -22,5 +35,6 @@ export function fetchAllData() {
 				allData = data.slice(0, 10);
 				dispatch(setAllData(allData));
 			})
+			.then(() => dispatch(showAllData()))
 	}
 }

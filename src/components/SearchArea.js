@@ -19,7 +19,7 @@ function SearchArea() {
 		.then(data => {
 			var countriesNamesLocal = [];
 			data.map(item => {
-				countriesNamesLocal.push({name: item.country, key: Math.random()*Math.pow(10, 5)})
+				countriesNamesLocal.push(item);
 		});
 			setCountriesNames(countriesNamesLocal);
 		})
@@ -33,14 +33,15 @@ function SearchArea() {
 		setCurrentSearchText(previousState => value);
 		var foundCountriesLocal = [];
 		countriesNames.map(country => {
-			if(value !== '' && country.name.toLowerCase().indexOf(value.toLowerCase()) === 0) {
+			if(value !== '' && country.country.toLowerCase().indexOf(value.toLowerCase()) === 0) {
 				foundCountriesLocal.push(country);
 			}
 		});
+		console.log(foundCountriesLocal);
 		setFoundCountries(foundCountriesLocal);
 	};
 
-	const foundCountriesItems = foundCountries.map(country => <FoundCountry countryName={country.name} key={country.key} />) 
+	const foundCountriesItems = foundCountries.map(country => <FoundCountry country={country} />) 
 
 	return (
 		<div className="search-area">
